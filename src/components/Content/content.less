@@ -1,208 +1,70 @@
-//Variables
-@violet: #8c99e0;
-@color-white: #ffff;
-@font-style: serif;
-@Z-index: -5;
-@black-color: #000000f6;
-
-// mixins
-.flex {
-  display: flex;
-  flex-direction: row;
-}
-.spaceBetween {
-  display: flex;
-  justify-content: space-between;
-}
-.justifyContent {
-  display: flex;
-  justify-content: center;
-}
-.alignItems {
-  display: flex;
-  align-items: center;
-}
-.spaceAround {
-  display: flex;
-  justify-content: space-around;
-}
-.margin1 {
-  margin: 8px;
-}
-.paddingForInpuBase {
-  padding-left: 5%;
-}
-.oreoFont {
-  font-size: "25%";
-}
-.border {
-  border: 1px solid @violet;
-}
-.textStyle {
-  font-weight: 500;
-  font-family: serif;
-}
-.paddingForDrawerContents {
-padding: 5%;
+.contentsNav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #8c99e0;   
+    background-color: #8c99e0;
+    padding: 30px;
+    color: white;
+    min-height: 165px;
 }
 
-//CSS
-.mainNavBar {
-  color: @violet;
-  z-index: @Z-index;
+.containerMain{
+    top: 48px;
+    position: relative;
 }
-.oreoText {
-  color: @color-white;
+.contentRoute{
+    display: flex;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: rgba(255,255,255,0.3);
 }
-.calendarIcon {
-  color: @color-white;
+.productCard{
+    width: 20%;
+    border-radius: 10px;
+    background-color: white;
+    padding: 15px;
+    margin: 5px;
+    div{
+        margin-top: 15px;
+    }
+    img{
+        position: relative;
+        top: 0px;
+        transition-property: all;
+        transition-duration: 500ms;
+        border-radius: 10px;
+    }
+    img:hover{
+        position: relative;
+        top:-40px;
+        box-shadow: 0px 4px 20px -5px;
+        transition-property: all;
+        transition-duration: 500ms;
+    }
 }
-.appBarContents {
-  .flex();
-  .spaceBetween();
+.productCards{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    top: -125px;
 }
-.appBarLeftContents {
-  .alignItems();
-  margin-left: 2%;
+@media screen and (max-width: 768px) {
+    .productCards{
+        flex-direction: column;
+    }
+        .productCard{
+        width: 88%;
+    }
+    #productWelcomeMsg{
+        display: none;
+    }
+    .contentsNav {
+        justify-content: center;
+    }
 }
-.searchBar {
-  background-color: @color-white;
-  .margin1();
-  .justifyContent();
-  .paddingForInpuBase();
-  width: max-content;
-}
-.textAlign {
-  text-align: center;
-}
-.searchBarContainer {
-  .justifyContent();
-}
-.searchIconInInput {
-  color: @black-color;
-}
-.headerContentRight {
-  .alignItems();
-}
-.homeContainer {
-  .alignItems();
-  border: 1px solid #888;
-  border-radius: 30px;
-  .paddingForDrawerContents()
-}
-.userContainer {
-  .alignItems();
-  border: 1px solid #888;
-  border-radius: 30px;
-  .paddingForDrawerContents();
-}
-.drawerConteiner {
-  .spaceAround();
-  margin-top: 4%;
-  height: "4%";
-}
-.homeIconContainer {
-  .alignItems();
-}
-.homeTextContainer {
-  .alignItems();
-}
-.dashboardDrawerContent {
-  .alignItems();
-  margin: 5%;
-}
-.appDrawerContainer {
-  margin: 5%;
-  .alignItems();
-}
-.ecommerceDrawerContainer {
-  margin: 5%;
-  .alignItems();
-}
-.uiDrawerContainer {
-  margin: 5%;
-  .alignItems();
-}
-.mainTextContainer {
-  .alignItems();
-}
-.dashboardAllDrawerContent {
-  .spaceBetween;
-}
-.drawerArrowContent {
-  .alignItems();
-}
-.appAllDrawerContainer {
-  .spaceBetween;
-}
-.ecommerceAllDrawerContainer {
-  .spaceBetween;
-}
-.uiAllDrawerContainer {
-  .spaceBetween;
-}
-.mainText {
-  .textStyle();
-}
-.drawerComponents {
-  margin: 5%;
-}
-.cardsTextContainer {
-  .spaceBetween();
-  background-color: @violet;
-}
-.dashboardMainComponent {
-  margin-top: 46px;
-}
-.cardsTextMainContainer {
-  background-color: @violet;
-}
-.cardsInProduct {
-  width: 20%;
-}
-.productContainer {
-  margin-top: 2%;
-}
-.imageInDashboard:hover {
-  z-index: 1000 !important;
-  position: absolute;
-  width: 15%;
-  height: 30%;
-  box-shadow: rgba(0, 0, 0, 0.2) 2px 8px 20px 10px;
-}
-.slideDrawerContent {
-  //transition: 'max-width 0.5s, opacity 0.2s 0.3s,ease-in';
-  transition-timing-function: ease-in;
-  margin-top: 4%;
-}
-#iconsInDrawer {
-  color: "#546e7a";
-}
-
-.imageContainerInDrawer {
-  .justifyContent();
-}
-.profileTextContainer {
-  justify-content: "center";
-}
-.nameContainer {
-  .textAlign();
-}
-.jobContainer {
-  .justifyContent();
-}
-.profileContainerInDrawer {
-  margin-top: 4%;
-}
-.iconsInProfileDrawer {
-  .textAlign();
-}
-.addressContainer {
-  .textAlign();
-}
-.followDataContainer {
-  .spaceAround();
-}
-.followContainer {
-  .textAlign();
+.productCostRow > *{
+    margin-left: 10px;
+    font-size: medium;
 }
