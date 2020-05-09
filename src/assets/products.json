@@ -1,0 +1,77 @@
+{ 
+        "products": [
+                {
+                        "image":"../../assets/productImg/chair.png",
+                        "name":"Brone Lamp Glasses",
+                        "actualCost":10,
+                        "currentCost":15
+                },
+                {
+                        "image":"../../assets/productImg/cycle.png",
+                        "name":"Unero Small Bag",
+                        "actualCost":10,
+                        "currentCost":15
+                },
+                {
+                        "image":"../../assets/productImg/clock.png",
+                        "name":"Unero Round Sunglass",
+                        "actualCost":10,
+                        "currentCost":15
+                },
+                {
+                        "image":"../../assets/productImg/headPhone.png",
+                        "name":"Wood Simple Clock",
+                        "actualCost":10,
+                        "currentCost":15
+                },
+                {
+                        "image":"../../assets/productImg/instrumentHolder.png",
+                        "name":"Wood Long TV Board",
+                        "actualCost":10,
+                        "currentCost":15
+                },
+                {
+                        "image":"../../assets/productImg/lamp.png",
+                        "name":"Simple Black Clock",
+                        "actualCost":10,
+                        "currentCost":15
+                },
+                {
+                        "image":"../../assets/productImg/pillow.png",
+                        "name":"Wood Simple Chair V2",
+                        "actualCost":10,
+                        "currentCost":15
+                },
+                {
+                        "image":"../../assets/productImg/smallbag.png",
+                        "name":"Simple Black Clock",
+                        "actualCost":10,
+                        "currentCost":15
+                },
+                {
+                        "image":"../../assets/productImg/vase.png",
+                        "name":"Brone Candle",
+                        "actualCost":10,
+                        "currentCost":15
+                },
+                {
+                        "image":"../../assets/productImg/woodChair.png",
+                        "name":"Simple Black Clock",
+                        "actualCost":10,
+                        "currentCost":15
+                },
+                {
+                        "image":"../../assets/productImg/bedlamp.png",
+                        "name":"Simple Black Clock",
+                        "actualCost":10,
+                        "currentCost":15
+                },
+                {
+                        "image":"../../assets/productImg/cycle.png",
+                        "name":"Unero Small Bag",
+                        "actualCost":10,
+                        "currentCost":15
+                }
+             ]
+     }
+     
