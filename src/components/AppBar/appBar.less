@@ -1,0 +1,69 @@
+.appBar{    
+    position: fixed;
+    display: flex;
+    width: 100%;
+    min-height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #8c99e0;
+    box-shadow: -4px -6px 13px 0px;
+    z-index: 1;
+}
+.appBar .MuiPaper-root{
+    display: flex;
+    padding: 0px 0px 0px 15px;
+    border-radius: 23px;
+}
+.appAssets > * {
+    margin-right: 20px;
+    color: white;
+}
+.appDivisions > * {
+    margin-right: 20px;
+}
+@keyframes rotation {
+    10% {transform: rotate(36deg);}
+    20% {transform: rotate(72deg);}
+    30% {transform: rotate(108deg);}
+    40% {transform: rotate(144deg);}
+    50% {transform: rotate(180deg);}
+    60% {transform: rotate(216deg);}
+    70% {transform: rotate(252deg);}
+    80% {transform: rotate(298deg);}
+    90% {transform: rotate(334deg);}
+    100% {transform: rotate(360deg);}
+}
+.settingIcon{
+    animation: 2s linear rotation;
+    animation-iteration-count : infinite;
+}
+  
+   @keyframes heartFadeInOut {
+    0% {transform: scale(0);opacity:0.9;}
+    20% {transform: scale(0.1);opacity:0.8;}
+    40% {transform: scale(0.5);opacity:0.5;}
+    60% {transform: scale(0.8);opacity:0.3;}
+    80% {transform: scale(0.9);opacity:0;}
+    100% {transform: scale(0.95);opacity:0;}
+  }
+  
+  .network{
+    position: absolute;
+    border: 3px solid black;
+    top: 8px;
+    left: 338px;
+    min-height: 20px;
+    min-width: 20px;
+    border-radius: 15px;
+    animation: heartFadeInOut 1s linear infinite; 
+  }
+  .networkDot{
+    position: absolute;
+    border: 3px solid black;
+    border-radius: 5px;
+  }
+  @media screen and (max-width:768px){
+    // .oreoName{
+    //     display: none;
+    // }
+  }
