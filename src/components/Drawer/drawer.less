@@ -1,3 +1,78 @@
+.greyFont{
+    color: gray;
+}
 .MuiDrawer-paperAnchorLeft{
     width: 250px;
+}
+#drawerConteiner{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;    
+    position: fixed;
+    z-index: 10;
+    background-color: white;
+}
+.drawerNav{
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid;
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+    min-width: 80px;
+    align-items: center;
+    cursor: pointer;
+    color: grey;
+}
+#nested-list-subheader {
+    .MuiListItemIcon-root{    
+        min-width: 30px;
+    }
+    .MuiListItem-button{
+        color: gray;
+    }    
+}
+.profileAddress{
+    text-align: center;
+}
+.profileContact{
+    margin: 10px;
+    .greyFont();
+    div{
+        margin : 15px 0px 15px 0px;
+    }
+}
+.userData > *{
+    margin: 3px;
+    .greyFont();
+}
+.MuiDrawer-modal .MuiDrawer-paper{
+    overflow-y: scroll;
+}
+.MuiDrawer-modal .MuiDrawer-paper::-webkit-scrollbar {
+    display: none;
+}
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.userProfile{
+    top: 78px;
+    position: relative;
+    animation: 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) slideInFromLeft;
+}
+@keyframes slideInFromRight {
+    0% {transform: translateX(-100%);}
+    100%{transform: translateX(0);}
+}
+.sideBarList{
+    position: relative;
+    top: 10px;
+    margin: 10px;
+    animation: 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) slideInFromRight;
 }
