@@ -5,7 +5,7 @@ import { Icon, Typography, Card } from '@material-ui/core'
 import "./content.less"
 import productData from '../../assets/products.json'
 
-class CardsInHome extends Component {
+class Content extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -65,4 +65,4 @@ class CardsInHome extends Component {
         )
     }
 }
-export default withRouter(CardsInHome)
+export default withRouter(Content)

@@ -28,30 +28,18 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
+import {connect} from 'react-redux'
+import * as actionType from '../../constants/actionsType'
+
 class Drawer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
         anchor:'left',
-        drawerOpen: false,
-        drawerContent: 'oreo',
-        left:'0px'
     }
   }
-
-    toggleDrawer = () => {
-        this.setState({drawerOpen:!this.state.drawerOpen})
-        console.log('data',this.state.drawerOpen)
-    }
-    handleDrawerContent = (contentOf) =>  {
-        this.setState({ drawerContent: contentOf })
-        this.state.drawerContent === '0px'? this.setState({ left: '400px' })
-                                          : this.setState({ left: '0px' })
-        
-    }
-
     render() {
-        let drawerContent = this.state.drawerContent === 'oreo' ?
+        let drawerContent = this.props.rDrawerContent === 'oreo' ?
             <div className='menuContent'>
               <List
                 component="nav"
@@ -62,7 +50,6 @@ class Drawer extends React.Component {
                     -- Main
                   </ListSubheader>
                 }
-                
               >
                 <div className='sideBarList'>
                 <ListItem button>
@@ -83,11 +70,12 @@ class Drawer extends React.Component {
                   </ListItemIcon>
                   <ListItemText primary="Ecommerce" />
                 </ListItem>
-                <ListItem button>
+                <ListItem button onClick={this.props.increment}>
                   <ListItemIcon >
                     <SwapCallsIcon style={{ fontSize: 17 }}/>
                   </ListItemIcon>
                   <ListItemText primary="User Interface (UI)" />
+                  {this.props.ctr}
                 </ListItem>
                 </div>
                 </List>
@@ -165,21 +153,21 @@ class Drawer extends React.Component {
         
       return (
         <div id='drawer'>
-          <IconButton onClick={this.toggleDrawer}>
+          <IconButton onClick={this.props.rDrawerOpenOnChange}>
             <MenuIcon/>
           </IconButton >
           <div className='drawerData'>
             <DrawerD 
               anchor='left'
-              open={this.state.drawerOpen}
-              onClose={this.toggleDrawer}>
+              open={this.props.rDrawerOpen}
+              onClose={this.props.rDrawerOpenOnChange}>
                 
                 <div id="drawerConteiner">
-                      <div className='drawerNav' onClick={e => this.handleDrawerContent('oreo')}>
+                      <div className='drawerNav' onClick={e => this.props.rDrawerContentOnChange('oreo')}>
                           <HomeIcon  />
                           <Typography >Oreo</Typography>
                       </div>
-                      <div className='drawerNav' onClick={e => this.handleDrawerContent('user')}>
+                      <div className='drawerNav' onClick={e => this.props.rDrawerContentOnChange('user')}>
                           <PersonIcon />
                           <Typography >User</Typography>
                       </div>
@@ -192,4 +180,18 @@ class Drawer extends React.Component {
     }
   }
 
-  export default Drawer
+  const mapStateToProps = state => {
+    return{
+      rDrawerOpen : state.drawerReducer.drawerOpen,
+      rDrawerContent : state.drawerReducer.drawerContent
+    }
+  }
+
+  const mapDispatchToProps = dispatch => {
+    return {
+      rDrawerOpenOnChange : () => dispatch({type : actionType.DRAWER_OPEN}),
+      rDrawerContentOnChange : (contentOf) => dispatch({type : actionType.DRAWER_CONTENT_CHANGE, contentOf:contentOf})
+    }
+  }
+
+  export default  connect(mapStateToProps,mapDispatchToProps)(Drawer)
